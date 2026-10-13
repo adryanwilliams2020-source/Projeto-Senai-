@@ -40,10 +40,54 @@ html, body, [class*="css"] {
 
 .stApp {
     background:
-        radial-gradient(circle at 15% 0%, rgba(47,125,246,.08), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(46,204,113,.05), transparent 25%),
-        var(--bg);
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+        radial-gradient(circle at 15% 0%, rgba(47,125,246,.10), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(46,204,113,.045), transparent 28%),
+        linear-gradient(145deg, #090d12 0%, #0d131a 45%, #0a0f15 100%);
+    background-size:
+        32px 32px,
+        32px 32px,
+        auto,
+        auto,
+        auto;
     color: var(--text);
+}
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    z-index: 9999;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #f2c94c 0 18px,
+            #f2c94c 18px 22px,
+            #121820 22px 40px
+        );
+    opacity: .85;
+}
+
+.block-container::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(115deg, transparent 0%, rgba(255,255,255,.012) 38%, transparent 62%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.008) 0px,
+            rgba(255,255,255,.008) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    mix-blend-mode: screen;
+    opacity: .45;
 }
 
 .block-container {
@@ -53,8 +97,11 @@ html, body, [class*="css"] {
 }
 
 [data-testid="stSidebar"] {
-    background: #0f151d;
-    border-right: 1px solid var(--border);
+    background:
+        linear-gradient(180deg, rgba(18,25,34,.98), rgba(10,15,21,.99)),
+        #0f151d;
+    border-right: 1px solid #2b3948;
+    box-shadow: 12px 0 30px rgba(0,0,0,.22);
 }
 
 [data-testid="stSidebar"] .block-container {
